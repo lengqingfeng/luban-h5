@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import Home from './views/Home.vue'
 import Home from './views/work-manager/index.vue'
+// import Login from './views/Login.vue'
 
 Vue.use(Router)
 
@@ -36,9 +37,9 @@ export default new Router({
       ]
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('./views/About.vue')
+      path: '/Login',
+      name: 'login',
+      component: () => import('./views/Login.vue')
     },
     {
       path: '/editor/:workId', // #!zh 编辑器页面，核心功能部分

@@ -50,7 +50,7 @@ const sidebarMenus = [
     ]
   },
   {
-    label: '账号中心',
+    label: '商家中心',
     i18nLabel: 'sidebar.accountCenter',
     value: 'freeTemplate',
     antIcon: 'appstore',
@@ -102,7 +102,13 @@ export default {
           <LangSelect style="float: right;cursor: pointer;" />
           {/* we can also put the plugins shortcuts here */}
           <a-dropdown>
-            <a-menu slot="overlay" onClick={() => {}}>
+            <a-menu slot="overlay" onClick={(e) => {
+              if(e.key == 3) {
+                 console.log('action==============='+ e.key);
+                // <router-link to="login">Login</router-link>
+                <router-link to={{ name: 'login', params: {} }}></router-link>
+              }
+            }}>
               <a-menu-item key="1">
                 <span>someone@luban</span>
               </a-menu-item>
