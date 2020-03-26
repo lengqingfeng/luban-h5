@@ -27,6 +27,25 @@ Vue.use(vClickOutside)
 Vue.component(Button.name, Button)
 Vue.component(ColorPicker.name, ColorPicker)
 
+
+router.beforeEach((to, from, next) => {
+  let token = localStorage.getItem('token');
+  let path = to.path;
+  console.log('path=====' + path);
+  if (path == '/login') {
+      next();
+      return;
+  }   
+  console.log('token=====' + token);
+  if (token) {
+      next();
+  } else {
+      next({
+          path: '/login'
+      })
+  }
+})
+
 new Vue({
   router,
   store,

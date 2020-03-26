@@ -105,8 +105,7 @@ export default {
             <a-menu slot="overlay" onClick={(e) => {
               if(e.key == 3) {
                  console.log('action==============='+ e.key);
-                // <router-link to="login">Login</router-link>
-                <router-link to={{ name: 'login', params: {} }}></router-link>
+                this.$router.push(`/login`)
               }
             }}>
               <a-menu-item key="1">

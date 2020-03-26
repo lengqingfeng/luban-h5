@@ -13,11 +13,13 @@ export default new Router({
       path: '/',
       component: Home,
       redirect: '/work-manager/list',
+      meta:{requireAuth:true},
       children: [
         {
           path: '/work-manager/list',
           name: 'work-manager-list',
-          component: () => import('@/views/work-manager/list.vue')
+          meta:{requireAuth:true},
+          component: () => import('@/views/work-manager/list.vue')    
         },
         {
           path: '/work-manager/templates',

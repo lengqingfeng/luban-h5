@@ -21,7 +21,7 @@ import 'ant-design-vue/lib/message/style/css' // 加载 CSS
 import { pluginsList } from './mixins/load-plugins.js'
 import Element from './components/core/models/element'
 import NodeWrapper from '@/components/preview/node-wrapper.js'
-
+import '@/permission'
 Vue.config.productionTip = true
 Vue.prototype.$message = message
 

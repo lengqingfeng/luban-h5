@@ -12,9 +12,9 @@
         <a-input
           v-decorator="[
           'userName',
-          { rules: [{ required: true, message: 'Please input your username!' }] },
+          { rules: [{ required: true, message: '请输入用户名！' }] },
         ]"
-          placeholder="Username"
+          placeholder="用户名"
         >
           <a-icon slot="prefix" type="user" style="color: rgba(0,0,0,.25)" />
         </a-input>
@@ -23,10 +23,10 @@
         <a-input
           v-decorator="[
           'password',
-          { rules: [{ required: true, message: 'Please input your Password!' }] },
+          { rules: [{ required: true, message: '请输入密码!' }] },
         ]"
           type="password"
-          placeholder="Password"
+          placeholder="密码"
         >
           <a-icon slot="prefix" type="lock" style="color: rgba(0,0,0,.25)" />
         </a-input>
@@ -40,10 +40,9 @@
             initialValue: true,
           },
         ]"
-        >Remember me</a-checkbox>
-        <a class="login-form-forgot" href>Forgot password</a>
-        <a-button type="primary" html-type="submit" class="login-form-button">Log in</a-button>Or
-        <a href>register now!</a>
+        >记住我</a-checkbox>
+        <a class="login-form-forgot" href>忘记密码</a>
+        <a-button type="primary" html-type="submit" class="login-form-button">登录</a-button>
       </a-form-item>
     </a-form>
   </a-card>
@@ -61,6 +60,10 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let inputPassword = values['password']
+          if(inputPassword == 123456) {
+                  console.log("loginSuccess");
+          }
           console.log("Received values of form: ", values);
         }
       });
@@ -70,7 +73,7 @@ export default {
 </script>
 <style>
 .titleStyle {
-    margin-top: 6%;
+    margin-top: 10%;
     text-align: center;
     height: 50px;
     color: white;
@@ -88,12 +91,12 @@ export default {
 }
 .cardStyle {
     position: absolute;
-    width: 400px;
-    height: 300px;
+    width: 300px;
+    height: 260px;
     left: 50%;
     top: 50%;
-    margin-left: -200px;
-    margin-top: -150px;
+    margin-left: -150px;
+    margin-top: -130px;
 }
 
 #components-form-demo-normal-login .login-form {
