@@ -74,7 +74,7 @@ export default {
       const that = this;
       axios({
         method: "post",
-        url: "https://api.gaojihealth.cn/api/loginbyPhonepass",
+        url: "",
         data: {
           phone: phone,
           password: password,
